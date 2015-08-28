@@ -1,0 +1,23 @@
+.col-md-10 * {
+  display: inline-block;
+  vertical-align: middle; }
+
+.container.song-form {
+  margin: 50px; }
+
+.add {
+  width: 100%;
+  font-size: 24px;
+  margin: 10px; }
+
+.row-centered {
+  text-align: center;
+  margin: 10px; }
+
+tr.resultItems {
+  font-size: 1.2em; }
+
+.songObjects > td > a {
+  margin: 10px; }
+
+/*# sourceMappingURL=main.css.map */
