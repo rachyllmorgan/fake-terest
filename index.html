@@ -15,6 +15,12 @@
   
   <body ng-app="FakeTrestApp">
 
+  <div ng-controller="AuthCtrl">
+    <button ng-click="login()">Login Anonymously</button>
+
+    <p ng-if="authData">Logged in user: <strong>{{ authData.uid }}</strong></p>
+    <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+  </div>
 
   <div ng-view></div> <!-- Angular Route looks for this div to load views in -->
 
@@ -31,6 +37,7 @@
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/controllers/AuthCtrl.js"></script>
     
 
     <!-- CONTROLLERS, FACTORIES AND APP JS GO HURR. -->
