@@ -4,15 +4,15 @@ var app = angular.module("FakeTrestApp", ['ngRoute', 'firebase']);
 	  function($routeProvider) {
 	    $routeProvider
 	      .when('/users', {
-	        templateUrl: 'partials/landing.html',
+	        templateUrl: './app/partials/landing.html',
 	        controller: 'LandingCtrl'
 	      })
 	      .when('/users/boards', {
-	        templateUrl: 'partials/boards.html',
+	        templateUrl: './app/partials/boards.html',
 	        controller: 'BoardsCtrl'
 	      })
 				.when('/users/boards/pins', {
-				templateUrl: 'partials/pins.html',
+				templateUrl: './app/partials/pins.html',
 				controller: 'PinsCtrl'
 				})
 	      .otherwise({
