@@ -1,0 +1,25 @@
+
+<section>
+    <h1>{{ title }}</h1>
+
+
+    <a href="#/">&lt; Home</a>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-3" ng-repeat="pin in pins">
+          <div class="thumbnail">
+            <img src="{{pin.img_src}}" alt="" width="100">
+            <div class="caption">
+              <h3>{{pin.title}}</h3>
+              <p>{{pin.comment}}</p>
+              <p>{{pin.url}}</p>
+              <p><a href="#" class="btn btn-primary" role="button">FAKE IT.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</section>
