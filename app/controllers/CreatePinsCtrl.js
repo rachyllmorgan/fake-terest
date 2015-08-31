@@ -28,15 +28,16 @@ app.controller("CreatePinsCtrl",
       pins.$add(
         newPin
         ).then(function() {
-          console.log(newPin);
+          // console.log(newPin);
         });
 
       $scope.boards.$loaded()
        .then(function (data) {
+         console.log(data);
          for (var key in data) {
 
            if (data[key].name === $scope.theBoard.name) {
-              var ref = new Firebase('https://fake-terest.firebaseio.com/boards/' + key + '/pins');
+              var ref = new Firebase('https://fake-terest.firebaseio.com/boards/' + data[key].$id + '/pins');
               var boardPins = $firebaseArray(ref);
               boardPins.$add(newPin);
             }
