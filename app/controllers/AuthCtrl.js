@@ -1,4 +1,4 @@
-app.controller("AuthCtrl", ["$scope", "$firebaseAuth", "$q",
+app.controller("AuthCtrl", ["$scope", "$firebaseAuth", "$q", 
 	function($scope, $firebaseAuth, $q) {
 
     var ref = new Firebase("https://fake-terest.firebaseio.com");
@@ -15,6 +15,7 @@ app.controller("AuthCtrl", ["$scope", "$firebaseAuth", "$q",
         console.log("Authentication failed:", error);
       });
     };
-  }
-]);
+}]);
+
+
 

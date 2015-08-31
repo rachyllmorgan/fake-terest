@@ -1,0 +1,7 @@
+
+  <div ng-controller="AuthCtrl" id="login" class="social-wrap a">
+		<button ng-click="login()" id="github">Sign in with Github</button>
+
+		<p ng-if="authData">Logged in user: <strong>{{ authData.uid }}</strong></p>
+		<p ng-if="error">Error: <strong>{{ error }}</strong></p>
+	</div>

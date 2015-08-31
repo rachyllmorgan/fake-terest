@@ -8,7 +8,4 @@ app.controller("LandingCtrl", ["$scope", "$q", "$firebaseArray",
 
     $scope.pins = $firebaseArray(ref);
     console.log($scope.pins);
-
-
-
 }]);
