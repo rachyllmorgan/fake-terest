@@ -28,13 +28,14 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="board in userBoards">
+    <div class="col-sm-6 col-md-4" ng-repeat="pin in thisBoardPins">
       <div class="thumbnail">
-        <h3>{{board.name}}</h3>        
-        <img src="{{board.pins[0].img_src}}" width="300px" alt="picture here">
+        <h3>{{pin.title}}</h3>        
+        <img src="{{pin.img_src}}" width="300px" alt="picture here">
         <div class="caption">
-          <p>{{board.pins[0].title}}</p>
-          <p><a class="btn btn-primary" role="button" ng-click="showBoardPins(board)">FAKE IT.</a></p>
+          <p>{{pin.comment}}</p>
+          <p>{{pin.url}}</p>
+          <p><a href="#" class="btn btn-primary" role="button">FAKE IT.</a></p>
         </div>
       </div>
     </div>

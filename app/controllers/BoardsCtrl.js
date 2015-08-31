@@ -1,6 +1,6 @@
 app.controller("BoardsCtrl", 
-  ["$scope", "$firebaseArray", "storage", "$q",
-  function($scope, $firebaseArray, storage, $q) {
+  ["$scope", "$firebaseArray", "storage", "$q", "$routeParams", "$location",
+  function($scope, $firebaseArray, storage, $q, $routeParams, $location) {
 
       var ref = new Firebase("https://fake-terest.firebaseio.com/boards");
 
@@ -12,7 +12,17 @@ app.controller("BoardsCtrl",
       $scope.userId = storage.getVariable("userId");
       // console.log($scope.userId);
 
-      
+      $scope.showBoardPins = function (board) {
+        console.log(board);
+        console.log(board.name);
+
+        $scope.boardDetail = board.name;
+        $scope.boardDetail = $routeParams.boardName;
+
+        $location.url('/users/' + $scope.userId + '/boards/' + board.name);
+
+        storage.addVariable("boardDetailName", board.name);
+      };
 
       $scope.allBoards.$loaded()
         .then(function (data) {
