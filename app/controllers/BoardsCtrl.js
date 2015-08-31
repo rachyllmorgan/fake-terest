@@ -8,6 +8,8 @@ app.controller("BoardsCtrl",
 
       // console.log($scope.allBoards);
 
+
+      // *****If page refreshes, userId becomes undefined. When navigating with browser arrows or links, userId remains.
       $scope.userId = storage.getVariable("userId");
       // console.log($scope.userId);
 
@@ -22,7 +24,7 @@ app.controller("BoardsCtrl",
           for (var key in data) {
             // console.log(data[key].user_id);
 
-            if (data[key].user_id === $scope.userId) {
+            if (data[key].user_id === $scope.userId) { 
               // console.log(data[key]);
               $scope.userBoards.push(data[key]);
             }
