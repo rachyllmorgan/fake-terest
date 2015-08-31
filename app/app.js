@@ -10,14 +10,14 @@ var app = angular.module("FakeTrestApp", ['ngRoute', 'firebase']);
         		requireLogin: false
       		}
 	      })
-	      .when('/users', {
+	      .when('/users/:userId', {
 	        templateUrl: './app/partials/landing.html',
 	        controller: 'LandingCtrl',
 	       //  data: {
         // 		requireLogin: true 
       		// }
 	      })
-	      .when('/users/boards', {
+	      .when('/users/:userId/boards', {
 	        templateUrl: './app/partials/boards.html',
 	        controller: 'BoardsCtrl',
 	      	// data: {
