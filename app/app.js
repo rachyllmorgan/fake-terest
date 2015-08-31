@@ -31,14 +31,14 @@ var app = angular.module("FakeTrestApp", ['ngRoute', 'firebase']);
     //     		requireLogin: true 
     //   		}
 				})
-				.when('/users/boards/create', {
+				.when('/users/:userId/boards/create', {
 				templateUrl: './app/partials/create-boards.html',
 				controller: 'CreateBoardsCtrl',
 				// data: {
     //     		requireLogin: true 
     //   		}
 				})
-				.when('/users/pins/create', {
+				.when('/users/:userId/pins/create', {
 				templateUrl: './app/partials/create-pins.html',
 				controller: 'CreatePinsCtrl',
 				// data: {

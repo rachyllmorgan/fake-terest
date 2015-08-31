@@ -1,6 +1,14 @@
 <h1>Create a new Pin! It's fun and exciting!</h1>
 <div>
-  Name: <input type="text" ng-model="newPinName">
+  Title: <input type="text" ng-model="newPinName">
+  URL: <input type="text" ng-model="addURL">
+  Image URL: <input type="text" ng-model="addImageURL">
+  Comment: <input type="text" ng-model="addComment">
+  <select
+    ng-model="theBoard"
+    ng-options="board.name for board in boards">
+    <option>--</option>
+  </select>
 </div>
 <div>
   <button ng-click="createPin()">Create</button>

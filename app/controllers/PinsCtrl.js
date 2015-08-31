@@ -8,7 +8,7 @@ app.controller("PinsCtrl",
 
 			console.log("$scope.pins", $scope.pins);
 
-			console.log("$scope.pins[0].title", $scope.pins[0].title); 
+			// console.log("$scope.pins[0].title", $scope.pins[0].title); 
 
 		$scope.userId = storage.getVariable("userId");
       console.log($scope.userId);   
