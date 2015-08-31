@@ -12,42 +12,42 @@ var app = angular.module("FakeTrestApp", ['ngRoute', 'firebase']);
 	      })
 	      .when('/users/:userId', {
 	        templateUrl: './app/partials/landing.html',
-	        controller: 'LandingCtrl',
+	        controller: 'LandingCtrl'
 	       //  data: {
         // 		requireLogin: true 
       		// }
 	      })
 	      .when('/users/:userId/boards', {
 	        templateUrl: './app/partials/boards.html',
-	        controller: 'BoardsCtrl',
+	        controller: 'BoardsCtrl'
 	      	// data: {
         // 		requireLogin: true 
       		// }
 	      })
+          .when('/users/:userId/boards/create', {
+            templateUrl: './app/partials/create-boards.html',
+            controller: 'CreateBoardsCtrl'
+            // data: {
+//          requireLogin: true 
+//          }
+            })
           .when('/users/:userId/boards/:boardName', {
             templateUrl: './app/partials/individual-boards.html',
-            controller: 'IndividualBoardCtrl',
+            controller: 'IndividualBoardCtrl'
             // data: {
         //      requireLogin: true 
             // }
           })
     		.when('/users/:userId/pins', {
     		templateUrl: './app/partials/pins.html',
-    		controller: 'PinsCtrl',
+    		controller: 'PinsCtrl'
     		// data: {
     //     		requireLogin: true 
     //   		}
 			})
-			.when('/users/:userId/boards/create', {
-			templateUrl: './app/partials/create-boards.html',
-			controller: 'CreateBoardsCtrl',
-			// data: {
-//     		requireLogin: true 
-//   		}
-			})
 			.when('/users/:userId/pins/create', {
 			templateUrl: './app/partials/create-pins.html',
-			controller: 'CreatePinsCtrl',
+			controller: 'CreatePinsCtrl'
 				// data: {
     //     		requireLogin: true 
     //   		}
