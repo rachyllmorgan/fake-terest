@@ -1,5 +1,5 @@
 app.controller("AuthCtrl", ["$scope", "$firebaseAuth", "$q", "storage", "$location",
-	function($scope, $firebaseAuth, $q, storage, $location) {
+  function($scope, $firebaseAuth, $q, storage, $location) {
 
     var ref = new Firebase("https://fake-terest.firebaseio.com");
 

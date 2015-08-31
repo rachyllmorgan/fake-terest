@@ -5,7 +5,6 @@ app.controller("BoardsCtrl",
       var ref = new Firebase("https://fake-terest.firebaseio.com/boards");
 
       $scope.allBoards = $firebaseArray(ref);
-
       // console.log($scope.allBoards);
 
 
@@ -34,9 +33,5 @@ app.controller("BoardsCtrl",
         .catch(function(error) {
           console.error("Error:", error);
         });
-
-      
-
-
 
 }]);

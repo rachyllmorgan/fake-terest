@@ -9,8 +9,6 @@ app.controller("LandingCtrl", ["$scope", "$q", "$firebaseArray", "$routeParams",
     $scope.pins = $firebaseArray(ref);
     console.log($scope.pins);
 
-    
-
     $scope.userId = storage.getVariable("userId");
     console.log($scope.userId);
 

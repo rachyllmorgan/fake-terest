@@ -15,7 +15,7 @@
       
       <form class="navbar-form navbar-left" role="search">
       <p><a href="#/users/{{userId}}/boards" class="btn btn-primary" role="button">Your Boards</a></p>
-      <p><a href="#/users/{{userId}}/pins" class="btn btn-primary" role="button">Your Pins</a></p>
+      <button type="button" class="btn btn-default navbar-btn">Your Pins</button>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
@@ -26,27 +26,17 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<section>
-    <h1>{{ title }}</h1>
-
-
-    <a href="#/">&lt; Home</a>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-md-3" ng-repeat="pin in pins">
-          <div class="thumbnail">
-            <img src="{{pin.img_src}}" alt="" width="100">
-            <div class="caption">
-              <h3>{{pin.title}}</h3>
-              <p>{{pin.comment}}</p>
-              <p>{{pin.url}}</p>
-              <p><a href="#" class="btn btn-primary" role="button">FAKE IT.</a></p>
-            </div>
-          </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="pin in pins">
+      <div class="thumbnail">
+        <h3>{{pins[i].title}}</h3>        
+        <div class="caption">
+          <p>{{pins[i].title}}</p>
+          <p>{{pins[i].comment}}</p>
+          <p>
         </div>
       </div>
     </div>
-
-
-</section>
+  </div>
+</div>
