@@ -1,6 +1,6 @@
-app.controller("LandingCtrl", ["$scope", "$q", "$firebaseArray",
+app.controller("LandingCtrl", ["$scope", "$q", "$firebaseArray", "$routeParams", "storage",
 
-    function($scope, $q, $firebaseArray) {
+    function($scope, $q, $firebaseArray, $routeParams, storage) {
 
     $scope.title = "MOTHERFUCKING PINTEREST";
 
@@ -8,4 +8,10 @@ app.controller("LandingCtrl", ["$scope", "$q", "$firebaseArray",
 
     $scope.pins = $firebaseArray(ref);
     console.log($scope.pins);
+
+    $scope.userId = storage.getVariable("userId");
+    console.log($scope.userId);
+
+    $scope.userId = $routeParams.userId;
+
 }]);
