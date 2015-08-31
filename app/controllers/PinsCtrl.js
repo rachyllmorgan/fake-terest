@@ -12,7 +12,6 @@ app.controller("PinsCtrl",
 
       $scope.allPins.$loaded()
         .then(function (data) {
-
           console.log(data);
           console.log($scope.userId);
           $scope.userPins = [];
