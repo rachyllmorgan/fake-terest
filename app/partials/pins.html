@@ -8,14 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">FAKE-TEREST. For your fake interests.</a>
+      <a class="navbar-brand" href="#/users/{{userId}}">FAKE-TEREST. For your fake interests.</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
       <form class="navbar-form navbar-left" role="search">
       <p><a href="#/users/{{userId}}/boards" class="btn btn-primary" role="button">Your Boards</a></p>
-      <button type="button" class="btn btn-default navbar-btn">Your Pins</button>
+      <p><a href="#/users/{{userId}}/pins" class="btn btn-primary" role="button">Your Pins</a></p>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
@@ -28,13 +28,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="pin in pins">
+    <div class="col-sm-6 col-md-4" ng-repeat="pin in userPins">
       <div class="thumbnail">
-        <h3>{{pins[i].title}}</h3>        
+        <h3>{{pin.title}}</h3>
+        <img src="{{pin.img_src}}" width="300px" alt="picture here">        
         <div class="caption">
-          <p>{{pins[i].title}}</p>
-          <p>{{pins[i].comment}}</p>
-          <p>
+          <p>{{pin.url}}</p>
+          <p>{{pin.comment}}</p>
         </div>
       </div>
     </div>
