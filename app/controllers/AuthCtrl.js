@@ -1,20 +1,24 @@
-app.controller("AuthCtrl", ["$scope", "$firebaseAuth", "$q", 
-	function($scope, $firebaseAuth, $q) {
+app.controller("AuthCtrl", ["$scope", "$firebaseAuth", "$q", "storage", "$location",
+  function($scope, $firebaseAuth, $q, storage, $location) {
 
     var ref = new Firebase("https://fake-terest.firebaseio.com");
 
     auth = $firebaseAuth(ref);
 
     $scope.login = function() {
-      $scope.authData = null;
+      
       $scope.error = null;
 
-      auth.$authWithOAuthPopup("github").then(function(authData) {
-        console.log("Logged in as:", authData.uid);
-      }).catch(function(error) {
-        console.log("Authentication failed:", error);
-      });
-    };
+        auth.$authWithOAuthPopup("github").then(function(authData) {
+          
+            console.log("Logged in as:", authData.uid);
+            storage.addVariable("userId", authData.uid);
+            $location.url('/users/' + authData.uid);
+        }).catch(function(error) {
+          console.log("Authentication failed:", error);
+        });
+      };
+
 }]);
 
 

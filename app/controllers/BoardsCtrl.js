@@ -1,12 +1,16 @@
 app.controller("BoardsCtrl", 
-  ["$scope", "$firebaseArray",
-  function($scope, $firebaseArray) {
+  ["$scope", "$firebaseArray", "storage",
+  function($scope, $firebaseArray, storage) {
 
-  var ref = new Firebase("https://fake-terest.firebaseio.com/boards");
+      var ref = new Firebase("https://fake-terest.firebaseio.com/boards");
 
-  $scope.boards = $firebaseArray(ref);
+      $scope.allBoards = $firebaseArray(ref);
 
-  console.log($scope.boards);
+      console.log($scope.allBoards);
 
-  }
-]);
+      $scope.userId = storage.getVariable("userId");
+      console.log($scope.userId);
+
+      
+
+}]);
