@@ -7,14 +7,13 @@ app.controller("BoardsCtrl",
       $scope.allBoards = $firebaseArray(ref);
       // console.log($scope.allBoards);
 
+      $scope.pinPic = [];
 
       // *****If page refreshes, userId becomes undefined. When navigating with browser arrows or links, userId remains.
       $scope.userId = storage.getVariable("userId");
       // console.log($scope.userId);
 
       $scope.showBoardPins = function (board) {
-        console.log(board);
-        console.log(board.name);
 
         $scope.boardDetail = board.name;
         $scope.boardDetail = $routeParams.boardName;
@@ -27,8 +26,6 @@ app.controller("BoardsCtrl",
       $scope.allBoards.$loaded()
         .then(function (data) {
 
-          console.log(data);
-          console.log($scope.userId);
           $scope.userBoards = [];
           for (var key in data) {
             // console.log(data[key].user_id);
@@ -39,6 +36,9 @@ app.controller("BoardsCtrl",
             }
           }
           console.log($scope.userBoards);
+          console.log($scope.userBoards[0].pins);
+          $scope.pinPic = $scope.userBoards[0].pins;
+          console.log($scope.pinPic);
         })
         .catch(function(error) {
           console.error("Error:", error);
