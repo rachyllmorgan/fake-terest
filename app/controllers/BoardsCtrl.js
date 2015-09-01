@@ -49,7 +49,8 @@ app.controller("BoardsCtrl",
     console.log(boardPinKeys);
     var firstPin = board.pins[boardPinKeys[0]];
     console.log(firstPin);
-    $scope.thisBoardPicture = firstPin.img_src;
+
+    return firstPin.img_src;
 
   };
 
@@ -61,7 +62,6 @@ app.controller("BoardsCtrl",
       board = $firebaseObject(ref);
 
     console.log("board ref", board);
-    console.log("boardPins", boardPins);
 
       board.$remove().then(function(ref) {
         // update the DOM
