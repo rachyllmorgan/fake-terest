@@ -5,11 +5,11 @@ app.controller("AuthCtrl", ["$scope", "$firebaseAuth", "$q", "storage", "$locati
 
     auth = $firebaseAuth(ref);
 
-    $scope.login = function() {
+    $scope.login = function(loginType) {
       
       $scope.error = null;
 
-        auth.$authWithOAuthPopup("github").then(function(authData) {
+        auth.$authWithOAuthPopup(loginType).then(function(authData) {
           
             console.log("Logged in as:", authData.uid);
             storage.addVariable("userId", authData.uid);

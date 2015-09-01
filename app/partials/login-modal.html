@@ -1,7 +1,9 @@
-
-  <div ng-controller="AuthCtrl" id="login" class="social-wrap a">
-		<button ng-click="login()" id="github">Sign in with Github</button>
-
-		<p ng-if="authData">Logged in user: <strong>{{ authData.uid }}</strong></p>
-		<p ng-if="error">Error: <strong>{{ error }}</strong></p>
+<div id="login" class="social-wrap a">
+	<div class="logButtons">
+		<button ng-click="login('github')" id="github">Sign in with Github</button>
+		<button ng-click="login('facebook')" id="facebook">Sign in with Facebook</button>
 	</div>
+
+	<p ng-if="authData">Logged in user: <strong>{{ authData.uid }}</strong></p>
+	<p ng-if="error">Error: <strong>{{ error }}</strong></p>
+</div>

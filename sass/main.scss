@@ -1,3 +1,7 @@
+html {
+  background-color: lightgrey;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
  div.social-wrap button {
     padding-right: 45px;
@@ -21,7 +25,79 @@
     text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
 }
 
-button#github{
+button#github {
     border-color: #007aa6;
     background-color: #444444;
 }
+
+button#facebook {
+  border-color: #2d5073;
+  background-color: #3b5998;
+  background-image: url(http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png); 
+}
+
+#login {
+  display: inline-block;
+  border:ridge 5px grey;
+  -moz-border-radius-topleft: 35px;
+  -moz-border-radius-topright:35px;
+  -moz-border-radius-bottomleft:35px;
+  -moz-border-radius-bottomright:35px;
+  -webkit-border-top-left-radius:35px;
+  -webkit-border-top-right-radius:35px;
+  -webkit-border-bottom-left-radius:35px;
+  -webkit-border-bottom-right-radius:35px;
+  border-top-left-radius:35px;
+  border-top-right-radius:35px;
+  border-bottom-left-radius:35px;
+  border-bottom-right-radius:35px;
+
+  /* center div */
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  background: white;
+  
+  margin: -150px 0 0 -150px;
+  left: 50%;
+  top: 50%;
+
+    .logButtons {
+      height: 100px;
+      width: 206px;
+      position: absolute;
+  
+      /*Centering Method 2*/
+      margin: -50px 0 0 -100px;
+      left: 50%;
+      top: 50%;
+    }
+}
+
+.tabs {
+  width: 400px;
+  position: relative;
+
+  /*Centering Method 2*/
+  margin: 0 0 0 -100px;
+  left: 50%;
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+  }
+}  
+
+.createButton {
+  margin-bottom: 5px;
+
+  button {
+  color: red;
+  }
+}
+
+.btn-default {
+  border: 1px solid grey;
+  color: red;
+} 
+ 

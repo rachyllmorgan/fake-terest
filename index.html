@@ -13,13 +13,24 @@
 
   
   <body ng-app="FakeTrestApp">
-<!-- Login Button -->
-<!--   <div ng-controller="AuthCtrl">
-    <button ng-click="login()">Login Anonymously</button>
-    <p ng-if="authData">Logged in user: <strong>{{ authData.uid }}</strong></p>
-    <p ng-if="error">Error: <strong>{{ error }}</strong></p>
-  </div> -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '409861509204327',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
 
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
     <div ng-view></div> <!-- Angular Route looks for this div to load views in -->
 
     <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
