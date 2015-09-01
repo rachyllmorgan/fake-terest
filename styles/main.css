@@ -157,5 +157,99 @@ a button {
   strong, small {
     display: block;
     padding: 5px; } }
+.createBox {
+  display: inline-block;
+  border: ridge 5px grey;
+  -moz-border-radius-topleft: 35px;
+  -moz-border-radius-topright: 35px;
+  -moz-border-radius-bottomleft: 35px;
+  -moz-border-radius-bottomright: 35px;
+  -webkit-border-top-left-radius: 35px;
+  -webkit-border-top-right-radius: 35px;
+  -webkit-border-bottom-left-radius: 35px;
+  -webkit-border-bottom-right-radius: 35px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  /* center div */
+  height: 325px;
+  width: 375px;
+  position: absolute;
+  background: white;
+  margin: -150px 0 0 -150px;
+  left: 50%;
+  top: 50%; }
+  .createBox h1 {
+    color: #C92228;
+    font-size: 2em;
+    font-family: "Pacifico";
+    text-decoration: none;
+    text-align: center;
+    margin-top: 50px; }
+  .createBox .inputArea {
+    margin: 60px 0; }
+    .createBox .inputArea h4 {
+      color: #C92228;
+      font-family: "Pacifico";
+      text-align: center; }
+    .createBox .inputArea input {
+      max-width: 300px;
+      position: absolute;
+      left: 20px; }
+    .createBox .inputArea button {
+      background-color: #C92228;
+      color: white;
+      font-family: 'Open Sans';
+      position: absolute;
+      bottom: 30px;
+      right: 25px; }
+
+.createBoxPin {
+  display: inline-block;
+  border: ridge 5px grey;
+  -moz-border-radius-topleft: 35px;
+  -moz-border-radius-topright: 35px;
+  -moz-border-radius-bottomleft: 35px;
+  -moz-border-radius-bottomright: 35px;
+  -webkit-border-top-left-radius: 35px;
+  -webkit-border-top-right-radius: 35px;
+  -webkit-border-bottom-left-radius: 35px;
+  -webkit-border-bottom-right-radius: 35px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  /* center div */
+  height: 600px;
+  width: 550px;
+  position: absolute;
+  background: white;
+  margin: -150px 0 0 -100px;
+  left: 35%;
+  top: 50%; }
+  .createBoxPin button {
+    background-color: #C92228;
+    color: white;
+    font-family: 'Open Sans';
+    position: absolute;
+    bottom: 30px;
+    right: 25px; }
+  .createBoxPin h1 {
+    color: #C92228;
+    font-size: 2em;
+    font-family: "Pacifico";
+    text-decoration: none;
+    text-align: center;
+    margin-top: 50px; }
+  .createBoxPin .inputArea {
+    margin: 40px 0; }
+    .createBoxPin .inputArea h4 {
+      color: #C92228;
+      font-family: "Pacifico";
+      text-align: center; }
+    .createBoxPin .inputArea input, .createBoxPin .inputArea select {
+      width: 500px;
+      margin-left: 20px; }
 
 /*# sourceMappingURL=main.css.map */
