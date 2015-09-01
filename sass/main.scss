@@ -2,6 +2,10 @@ html {
   background-color: lightgrey;
 }
 
+body {
+  background-color: #dedede;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
  div.social-wrap button {
     padding-right: 45px;
@@ -67,20 +71,17 @@ button#facebook {
       width: 206px;
       position: absolute;
   
-      /*Centering Method 2*/
-      margin: -50px 0 0 -100px;
+      // Centering Method 2
+      margin: 0px 0 0 -100px;
       left: 50%;
       top: 50%;
+
+
     }
 }
 
 .tabs {
-  width: 400px;
-  position: relative;
-
-  /*Centering Method 2*/
-  margin: 0 0 0 -100px;
-  left: 50%;
+  text-align: center;
 
   li {
     display: inline-block;
@@ -92,12 +93,114 @@ button#facebook {
   margin-bottom: 5px;
 
   button {
-  color: red;
+  background-color: #C92228;
+  color: white;
   }
 }
 
 .btn-default {
   border: 1px solid grey;
-  color: red;
+  color: #C92228;
 } 
- 
+
+.thumbnail {
+  min-height: 350px;
+  font-family: 'Open Sans';
+  
+}
+
+.thumbnail h3 {
+  font-family: 'Pacifico';
+}
+
+.thumbnail img {
+  width: 150px;
+  height: 150px;
+}
+
+.pinIt {
+  position: absolute;
+  bottom: 30px;
+  right: 25px;
+  background-color: #C92228;
+  color: white;
+  font-family: 'Open Sans';
+}
+
+.navbar-brand {
+  font-family: "Pacifico";
+  
+}
+
+.navbar-header > a.navbar-brand {
+  color: #C92228;
+  font-size: 2em;
+}
+
+.navbar-header > a.navbar-brand:hover {
+  color: #dedede;
+}
+
+.navbar {
+  background-color: white;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+       -moz-box-shadow: 0 8px 6px -6px #999;
+            box-shadow: 0 8px 6px -6px #999;
+}
+
+#loginTitle {
+  color: #C92228;
+  font-size: 2em;
+  font-family: "Pacifico";
+  position: absolute;
+  top: 10px;
+  text-decoration: none;
+}
+
+#login strong, #login small {
+  display: block;
+  text-align: center;
+  margin-left: 7%;
+}
+
+small {
+  font-family: 'Open Sans';
+}
+
+.tabs > ul > li > a {
+  font-family: 'Open Sans';
+  background-color: #C92228;
+  color: white;
+  
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+a button {
+  font-family: "Open Sans";
+
+}
+
+// .btn-circle.btn-xl {
+//   width: 100px;
+//   height: 100px;
+//   padding: 10px 16px;
+//   // font-size: 24px;
+//   // line-height: 1.33;
+//   border-radius: 100%;
+//   text-align: center;
+// }
+
+
+

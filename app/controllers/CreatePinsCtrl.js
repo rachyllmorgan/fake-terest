@@ -1,6 +1,6 @@
 app.controller("CreatePinsCtrl", 
-  ["$scope", "$firebaseArray", "storage", "$q",
-  function($scope, $firebaseArray, storage, $q) {
+  ["$scope", "$firebaseArray", "storage", "$q", "$location",
+  function($scope, $firebaseArray, storage, $q, $location) {
 
     $scope.newPinName = "";
     $scope.theBoard = "";
@@ -8,6 +8,14 @@ app.controller("CreatePinsCtrl",
     $scope.addURL = "";
     $scope.addComment = "";
     $scope.addImageURL = "";
+    $scope.userId = storage.getVariable("userId");
+    $scope.pinSearch = "";
+
+    $scope.searchAllPins = function () {
+      storage.addVariable("pinSearch", $scope.pinSearch);
+      $location.url('/users/' + $scope.userId);
+    };
+    
     var ref = new Firebase('https://fake-terest.firebaseio.com/boards');
     $scope.boards = $firebaseArray(ref);
     
