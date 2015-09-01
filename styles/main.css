@@ -153,4 +153,9 @@ small {
 a button {
   font-family: "Open Sans"; }
 
+@media (max-width: 800px) {
+  strong, small {
+    display: block;
+    padding: 5px; } }
+
 /*# sourceMappingURL=main.css.map */
