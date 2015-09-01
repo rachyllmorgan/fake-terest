@@ -192,15 +192,11 @@ a button {
 
 }
 
-// .btn-circle.btn-xl {
-//   width: 100px;
-//   height: 100px;
-//   padding: 10px 16px;
-//   // font-size: 24px;
-//   // line-height: 1.33;
-//   border-radius: 100%;
-//   text-align: center;
-// }
-
+@media (max-width: 800px) {
+  strong, small {
+    display: block;
+    padding: 5px;
+  }
+}
 
 
