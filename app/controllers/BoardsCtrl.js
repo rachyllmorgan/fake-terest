@@ -2,6 +2,8 @@ app.controller("BoardsCtrl",
   ["$scope", "$firebaseArray", "storage", "$q", "$routeParams", "$location",
   function($scope, $firebaseArray, storage, $q, $routeParams, $location) {
 
+      $scope.boardSearch = "";
+
       var ref = new Firebase("https://fake-terest.firebaseio.com/boards");
 
       $scope.allBoards = $firebaseArray(ref);

@@ -1,8 +1,14 @@
 app.controller("CreateBoardsCtrl", 
-  ["$scope", "$firebaseArray", "storage",
-  function($scope, $firebaseArray, storage) {
+  ["$scope", "$firebaseArray", "storage", "$location",
+  function($scope, $firebaseArray, storage, $location) {
+
+    $scope.searchAllPins = function () {
+      storage.addVariable("pinSearch", $scope.pinSearch);
+      $location.url('/users/' + $scope.userId);
+    };
 
     $scope.newBoardName = "";
+    $scope.userId = storage.getVariable("userId");
 
     $scope.createBoard = function () {
       var ref = new Firebase('https://fake-terest.firebaseio.com/boards');

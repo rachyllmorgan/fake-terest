@@ -2,6 +2,8 @@ app.controller("PinsCtrl",
   ["$scope", "$firebaseArray", "$routeParams", "$q", "storage",
   function($scope, $firebaseArray, $routeParams, $q, storage) {
 
+    $scope.yourPinSearch = "";
+
   	var ref = new Firebase("https://fake-terest.firebaseio.com/pins");
 
   	$scope.allPins = $firebaseArray(ref);

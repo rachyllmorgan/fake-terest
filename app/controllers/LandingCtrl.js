@@ -14,4 +14,17 @@ app.controller("LandingCtrl", ["$scope", "$q", "$firebaseArray", "$routeParams",
 
     $scope.userId = $routeParams.userId;
 
+    var isPreviousSearchTerm = storage.getVariable("pinSearch");
+
+    if (isPreviousSearchTerm !== undefined) {
+        $scope.pinSearch = isPreviousSearchTerm;
+    } else {
+        $scope.pinSearch = "";
+    }
+
+
+    $scope.filterPins = function () {
+        $scope.pinSearchText = $scope.pinSearch;
+    };
+
 }]);
