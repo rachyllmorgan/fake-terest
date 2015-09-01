@@ -18,6 +18,20 @@ app.controller("CreatePinsCtrl",
     
     var ref = new Firebase('https://fake-terest.firebaseio.com/boards');
     $scope.boards = $firebaseArray(ref);
+
+    $scope.boards.$loaded()
+      .then(function (data) {
+        $scope.userBoards = [];
+        for (var key in data) {
+          if (data[key].user_id === $scope.userId) { 
+            $scope.userBoards.push(data[key]);
+          }
+        }
+        console.log($scope.userBoards);
+      })
+      .catch(function(error) {
+        console.error("Error:", error);
+      });
     
     $scope.createPin = function () {
       var ref = new Firebase('https://fake-terest.firebaseio.com/pins');
