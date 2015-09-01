@@ -2,26 +2,26 @@ app.controller("AuthCtrl", ["$scope", "$firebaseAuth", "$q", "storage", "$locati
   function($scope, $firebaseAuth, $q, storage, $location) {
 
     var ref = new Firebase("https://fake-terest.firebaseio.com");
-    console.log(ref.getAuth());
+    console.log("auth response", ref.getAuth());
 
     // auth = $firebaseAuth(ref);
     var authData = ref.getAuth();
 
     $scope.login = function (loginType) {
       if (authData === null) {
-      ref.$authWithOAuthPopup(loginType)
-        .then(function (authData) {
+        ref.$authWithOAuthPopup(loginType)
+          .then(function (authData) {
+            storage.addVariable("userId", authData.uid);
+            $location.url('/users/' + authData.uid);
+          })
+          .catch(function(error) {
+            console.log("Authentication failed:", error);
+          });
+        } else {
           storage.addVariable("userId", authData.uid);
+          // user_authenticated = true;
           $location.url('/users/' + authData.uid);
-        })
-        .catch(function(error) {
-          console.log("Authentication failed:", error);
-        });
-      } else {
-        storage.addVariable("userId", authData.uid);
-        // user_authenticated = true;
-        $location.url('/users/' + authData.uid);
-      }
+        }
     };
 
     

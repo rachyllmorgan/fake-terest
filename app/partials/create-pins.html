@@ -37,18 +37,31 @@
   </ul>
 </div>
 
-<h1>Create a new Pin! It's fun and exciting!</h1>
-<div>
-  Title: <input type="text" ng-model="newPinName">
-  URL: <input type="text" ng-model="addURL">
-  Image URL: <input type="text" ng-model="addImageURL">
-  Comment: <input type="text" ng-model="addComment">
-  <select
-    ng-model="theBoard"
-    ng-options="board.name for board in boards">
-    <option>--</option>
-  </select>
-</div>
-<div>
-  <a href="#/users/{{userId}}/pins"><button ng-click="createPin()">Create</button></a>
+<div class="createBoxPin">
+  <h1>Create a new Pin!</h1>
+  <div class="inputArea">
+    <div>
+      <h4>Title:</h4> <input type="text" class="form-control" ng-model="newPinName">
+    </div>
+    <div>
+      <h4>URL:</h4> <input type="text" class="form-control" ng-model="addURL">
+    </div>
+    <div>
+      <h4>Image URL:</h4> <input type="text" class="form-control" ng-model="addImageURL">
+    </div>
+    <div>
+      <h4>Comment:</h4> <input type="text" class="form-control" ng-model="addComment">
+    </div>
+    <div>
+      <h4>Select Board:</h4>
+      <select
+        ng-model="theBoard"
+        ng-options="board.name for board in boards" class="form-control">
+        <option value='' class="small"> Current Board Options </option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <a href="#/users/{{userId}}/pins"><button ng-click="createPin()" class="btn btn-sm">Create</button></a>
+  </div>
 </div>
