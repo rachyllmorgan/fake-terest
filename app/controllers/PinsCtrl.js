@@ -1,6 +1,6 @@
 app.controller("PinsCtrl", 
-  ["$scope", "$firebaseArray", "$routeParams", "$q", "storage",
-  function($scope, $firebaseArray, $routeParams, $q, storage) {
+  ["$scope", "$firebaseArray", "$firebaseObject", "$routeParams", "$q", "storage",
+  function($scope, $firebaseArray, $firebaseObject, $routeParams, $q, storage) {
 
   	var ref = new Firebase("https://fake-terest.firebaseio.com/pins");
 
@@ -29,6 +29,22 @@ app.controller("PinsCtrl",
           console.error("Error:", error);
         });
 
-  }
-  
-]);
+  // / deletes from list
+  $scope.removePin = function(pin) {
+    console.log("pin", pin);
+
+      var ref = new Firebase("https://fake-terest.firebaseio.com/pins/" + pin.$id);
+      pin = $firebaseObject(ref);
+
+    console.log("pin ref", pin);
+
+      pin.$remove().then(function(ref) {
+        // update the DOM
+
+        console.log("removed pin", pin);
+        // data has been deleted locally and in the database
+      }, function(error) {
+        console.log("Error:", error);
+      });
+  };
+}]);
