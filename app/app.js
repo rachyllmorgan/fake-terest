@@ -1,4 +1,44 @@
-var app = angular.module("FakeTrestApp", ['ngRoute', 'firebase']);
+var app = angular.module("FakeTrestApp",
+    [
+        'ngRoute', 'firebase'
+    ]
+).factory("storage", function () {
+    var bucket = {};
+
+    return {
+        getVariable: function (junk) {
+            if (bucket.hasOwnProperty(junk)) {
+                return bucket[junk];
+            }
+        },
+        addVariable: function (key, value) {
+            bucket[key] = value;
+        }
+    };
+}).run(['storage', function(storage) {
+    var ref = new Firebase("https://fake-terest.firebaseio.com");
+    console.log("auth response", ref.getAuth());
+
+    // auth = $firebaseAuth(ref);
+    var authData = ref.getAuth();
+
+    // $scope.login = function (loginType) {
+      if (authData === null) {
+        ref.$authWithOAuthPopup(loginType)
+          .then(function (authData) {
+            storage.addVariable("userId", authData.uid);
+            $location.url('/users/' + authData.uid);
+          })
+          .catch(function(error) {
+            console.log("Authentication failed:", error);
+          });
+        } else {
+          storage.addVariable("userId", authData.uid);
+          // user_authenticated = true;
+          // $location.url('/users/' + authData.uid);
+        }
+    // };
+}]);
 
 	app.config(['$routeProvider',
 	  function($routeProvider) {

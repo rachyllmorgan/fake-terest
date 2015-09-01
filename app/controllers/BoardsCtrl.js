@@ -38,13 +38,20 @@ app.controller("BoardsCtrl",
             }
           }
           console.log($scope.userBoards);
-          console.log($scope.userBoards[0].pins);
-          $scope.pinPic = $scope.userBoards[0].pins;
-          console.log($scope.pinPic);
         })
         .catch(function(error) {
           console.error("Error:", error);
         });
+
+  $scope.getPicture = function (board) {
+    console.log(board.pins);
+    var boardPinKeys = Object.keys(board.pins);
+    console.log(boardPinKeys);
+    var firstPin = board.pins[boardPinKeys[0]];
+    console.log(firstPin);
+    $scope.thisBoardPicture = firstPin.img_src;
+
+  };
 
     // deletes from list
   $scope.removeBoard = function(board) {

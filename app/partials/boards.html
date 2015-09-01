@@ -43,10 +43,11 @@
   <div class="row">
     <div class="col-sm-6 col-md-4" ng-repeat="board in userBoards | filter: boardSearch">
       <div class="thumbnail" ng-click="showBoardPins(board)">
-        <h3>{{board.name}}</h3>        
-        <img src="{{userBoards[0].pins[0].img_src}}" width="300px" alt="picture here">
+        <h3>{{board.name}}</h3>
+        <div ng-init="pic = getPicture(board)">        
+          <img src="{{thisBoardPicture}}" width="300px" alt="picture here">
+        </div>
         <div class="caption">
-          <p>{{board.pins[0].title}}</p>
           <button ng-click="showBoardPins(board)">View Pins</button>
           <button ng-click="removeBoard(board)">Remove Board</button>
         </div>
