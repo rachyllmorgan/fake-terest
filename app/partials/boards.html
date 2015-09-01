@@ -38,6 +38,8 @@
         <img src="{{boards[0].pins[0].img_src}}" width="300px" alt="picture here">
         <div class="caption">
           <p>{{board.pins[0].title}}</p>
+          <button ng-click="showBoardPins(board)">View Pins</button>
+          <button ng-click="removeBoard(board)">Remove Board</button>
         </div>
       </div>
     </div>

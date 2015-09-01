@@ -1,6 +1,6 @@
 app.controller("BoardsCtrl", 
-  ["$scope", "$firebaseArray", "storage", "$q", "$routeParams", "$location",
-  function($scope, $firebaseArray, storage, $q, $routeParams, $location) {
+  ["$scope", "$firebaseArray", "$firebaseObject", "storage", "$q", "$routeParams", "$location",
+  function($scope, $firebaseArray, $firebaseObject, storage, $q, $routeParams, $location) {
 
       $scope.boardSearch = "";
 
@@ -45,5 +45,25 @@ app.controller("BoardsCtrl",
         .catch(function(error) {
           console.error("Error:", error);
         });
+
+    // deletes from list
+  $scope.removeBoard = function(board) {
+    console.log("board", board);
+
+      var ref = new Firebase("https://fake-terest.firebaseio.com/boards/" + board.$id);
+      board = $firebaseObject(ref);
+
+    console.log("board ref", board);
+    console.log("boardPins", boardPins);
+
+      board.$remove().then(function(ref) {
+        // update the DOM
+
+        console.log("removed board", board);
+        // data has been deleted locally and in the database
+      }, function(error) {
+        console.log("Error:", error);
+      });
+  };
 
 }]);
