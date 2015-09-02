@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
       <form class="form-inline navbar-form navbar-left" role="search">
-        <div class="form-group">
+        <div class="form-group" id="inputBar">
           <input type="text" class="form-control" placeholder="Search All Pins" ng-model="pinSearch">
         </div>
       </form>      
@@ -51,8 +51,8 @@
             <div class="caption">
               <h3>{{pin.title}}</h3>
               <p>{{pin.comment}}</p>
-              <p><a href="{{pin.url}}">{{pin.url}}</a></p>
-              <p><a href="#" class="btn btn-default pinIt" role="button">FAKE IT.</a></p>
+              <p><a href="http://{{pin.url}}">{{pin.url}}</a></p>
+              <p><a href="#" class="btn btn-default pinIt" role="button">Fake It.</a></p>
             </div>
           </div>
         </div>
