@@ -25,26 +25,40 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<div class="tabs">
-  <ul>
-    <li>
-      <a href="#/users/{{userId}}/boards" class="btn btn-default" role="button">Your Boards</a>
-    </li>
-    <li>
-      <a href="#/users/{{userId}}/pins" class="btn btn-default" role="button">Your Pins</a>
-    </li>
-  </ul>
-</div>
-
-<div class="createBox">
-  <h1>Create a new Board!</h1>
-    <div class="inputArea">
-      <div>
-        <h4>Name of Board:</h4> <input type="text" class="form-control" ng-model="newBoardName" autofocus>
-      </div>
-      <div>
-        <a href="#/users/{{userId}}/boards"><button ng-click="createBoard()" class="btn btn-sm">Create</button></a>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-md-4"></div>
+    <div class="col-sm-6 col-md-4">
+      <div class="tabs">
+        <ul>
+          <li>
+            <a href="#/users/{{userId}}/boards" class="btn btn-default" role="button">Your Boards</a>
+          </li>
+          <li>
+            <a href="#/users/{{userId}}/pins" class="btn btn-default" role="button">Your Pins</a>
+          </li>
+        </ul>
       </div>
     </div>
+    <div class="col-sm-6 col-md-4"></div>
+  </div>
+    
+  <div class="row">
+    <div class="col-sm-6 col-md-4"></div>
+    <div class="col-sm-6 col-md-4">
+      <div class="createBox">
+        <h1>Create a new Board!</h1>
+          <div class="inputArea">
+            <div>
+              <h4>Name of Board:</h4><input type="text" class="form-control" ng-model="newBoardName" autofocus>
+            </div>
+            <div>
+              <a href="#/users/{{userId}}/boards"><button ng-click="createBoard()" class="btn btn-sm">Create</button></a>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+  </div>
 </div>
