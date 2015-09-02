@@ -81,7 +81,7 @@ button#facebook {
 }
 
 .tabs {
-  text-align: center;
+  margin: auto;
 
   li {
     display: inline-block;
@@ -243,6 +243,19 @@ a button {
     padding: 5px;
   }
 }
+
+@media (max-width: 640px) {
+  .inputArea {
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+
+    input[type="text"], select {
+      max-width: 100%;
+    }
+  }
+}
+
 // styling for create board html
 
 .createBox {
@@ -263,13 +276,11 @@ a button {
 
   /* center div */
   height: 325px;
-  width: 375px;
-  position: absolute;
+  width: 100%;
+  position: relative;
   background: white;
   
-  margin: -150px 0 0 -150px;
-  left: 50%;
-  top: 50%;
+  margin: auto;
 
     h1 {
       color: #C92228;
@@ -290,9 +301,9 @@ a button {
         }
 
         input {
-          max-width: 300px;
+          max-width: 80%;
           position: absolute;
-          left: 20px;
+          left: 10%;
         }
 
         button{
@@ -326,13 +337,11 @@ a button {
 
   /* center div */
   height: 600px;
-  width: 550px;
-  position: absolute;
+  width: 60%;
+  position: relative;
   background: white;
   
-  margin: -150px 0 0 -100px;
-  left: 35%;
-  top: 50%;
+  margin-left: 20%;
 
     button {
       background-color: #C92228;
@@ -353,7 +362,8 @@ a button {
     }
 
     .inputArea {
-      margin: 40px 0;
+      width: 80%;
+      margin: 40px;
 
         h4 {
           color: #C92228;
@@ -362,8 +372,7 @@ a button {
         }
 
         input, select {
-          width: 500px;
-          margin-left: 20px;
+          width: 100%;
         }
     }
 }

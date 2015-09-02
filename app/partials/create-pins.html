@@ -26,42 +26,56 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="tabs">
-  <ul>
-    <li>
-      <a href="#/users/{{userId}}/boards" class="btn btn-default" role="button">Your Boards</a>
-    </li>
-    <li>
-      <a href="#/users/{{userId}}/pins" class="btn btn-default" role="button">Your Pins</a>
-    </li>
-  </ul>
-</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-md-4"></div>
+    <div class="col-sm-6 col-md-4">
+      <div class="tabs">
+        <ul>
+          <li>
+            <a href="#/users/{{userId}}/boards" class="btn btn-default" role="button">Your Boards</a>
+          </li>
+          <li>
+            <a href="#/users/{{userId}}/pins" class="btn btn-default" role="button">Your Pins</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4"></div>
+  </div>     
 
-<div class="createBoxPin">
-  <h1>Create a new Pin!</h1>
-  <div class="inputArea">
-    <div>
-      <h4>Title:</h4> <input type="text" class="form-control" ng-model="newPinName" autofocus>
-    </div>
-    <div>
-      <h4>URL:</h4> <input type="text" class="form-control" ng-model="addURL">
-    </div>
-    <div>
-      <h4>Image URL:</h4> <input type="text" class="form-control" ng-model="addImageURL">
-    </div>
-    <div>
-      <h4>Comment:</h4> <input type="text" class="form-control" ng-model="addComment">
-    </div>
-    <div>
-      <h4>Select Board:</h4>
-      <select
-        ng-model="theBoard"
-        ng-options="board.name for board in userBoards" class="form-control">
-        <option value='' class="small"> Current Board Options </option>
-      </select>
-    </div>
-  </div>
-  <div>
-    <a href="#/users/{{userId}}/pins"><button ng-click="createPin()" class="btn btn-sm">Create</button></a>
-  </div>
-</div>
+  <div class="row">
+    <!-- <div class="col-sm-6 col-md-4"></div>
+    <div class="col-sm-6 col-md-4"> -->
+      <div class="createBoxPin">
+        <h1>Create a new Pin!</h1>
+        <div class="inputArea">
+          <div>
+            <h4>Title:</h4> <input type="text" class="form-control" ng-model="newPinName" autofocus>
+          </div>
+          <div>
+            <h4>URL:</h4> <input type="text" class="form-control" ng-model="addURL">
+          </div>
+          <div>
+            <h4>Image URL:</h4> <input type="text" class="form-control" ng-model="addImageURL">
+          </div>
+          <div>
+            <h4>Comment:</h4> <input type="text" class="form-control" ng-model="addComment">
+          </div>
+          <div>
+            <h4>Select Board:</h4>
+            <select
+              ng-model="theBoard"
+              ng-options="board.name for board in userBoards" class="form-control">
+              <option value='' class="small"> Current Board Options </option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <a href="#/users/{{userId}}/pins"><button ng-click="createPin()" class="btn btn-sm">Create</button></a>
+        </div>
+      </div>
+<!--     </div>
+    <div class="col-sm-6 col-md-4"></div> -->
+  </div>  
+</div>  
